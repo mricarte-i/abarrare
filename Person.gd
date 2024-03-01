@@ -12,8 +12,12 @@ func walk() -> void:
 	anim.play("Man_Walk")
 
 
-func apply_physics() -> void:
+func apply_physics(force: Vector3) -> void:
 	skeleton.physical_bones_start_simulation()
+	for phybone in skeleton.get_children():
+		if phybone is PhysicalBone3D:
+			phybone.apply_central_impulse(force)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

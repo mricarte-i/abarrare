@@ -30,7 +30,7 @@ func look_follow(state, current_transform, target_pos) -> void:
 func apply_punch(force: Vector3) -> void:
 	apply_central_impulse(force)
 	print("auch")
-	skin.apply_physics()
+	skin.apply_physics(force)
 	isDead = true
 	coll.disabled = true
 	anim.play("death")

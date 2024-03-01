@@ -20,7 +20,7 @@ var gravity = 9.8
 
 @onready var punchHitbox = $Head/Camera3D/Area3D
 
-const KNOCKBACK = 18.0
+@export var KNOCKBACK = 18.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
