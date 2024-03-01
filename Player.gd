@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 		print(punchHitbox.get_overlapping_bodies(), punchHitbox.get_overlapping_areas())
 		for body in punchHitbox.get_overlapping_bodies():
 			print(body)
-			if "Enemy" in body.name:
+			if "Person" in body.name:
 				var push_direction = global_position.direction_to(body.global_position)
 				var force = push_direction * KNOCKBACK
 				body.apply_punch(force)

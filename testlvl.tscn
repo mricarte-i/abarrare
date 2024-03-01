@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://pc2bkenxpula"]
+
+[ext_resource type="PackedScene" uid="uid://bh3s76ef0c0nr" path="res://assets/place1.gltf" id="1_pnss1"]
+[ext_resource type="PackedScene" uid="uid://dlr464eo6u4ej" path="res://player.tscn" id="2_586su"]
+[ext_resource type="PackedScene" uid="uid://84401dlrcjtv" path="res://enemy.tscn" id="3_u8571"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lin6o"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ebppa"]
+sky_material = SubResource("ProceduralSkyMaterial_lin6o")
+
+[sub_resource type="Environment" id="Environment_nguxe"]
+background_mode = 2
+sky = SubResource("Sky_ebppa")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6oag"]
+size = Vector3(23.3479, 1.73047, 79.7188)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_af412"]
+size = Vector3(0.969116, 6.59448, 53.1117)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.09
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nguxe")
+
+[node name="place1" parent="." instance=ExtResource("1_pnss1")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_586su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -9.66142)
+
+[node name="Person" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.677607, -16.7794)
+target = NodePath("../target")
+isAberrant = true
+
+[node name="Person2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.77784, 0.677607, -18.8706)
+target = NodePath("../target2")
+
+[node name="Person3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33241, 0.677607, -18.8706)
+target = NodePath("../target3")
+
+[node name="Person4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7731, 0.677607, -21.0875)
+target = NodePath("../target4")
+isAberrant = true
+
+[node name="Person5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156365, 0.677607, -20.6471)
+target = NodePath("../target")
+
+[node name="Person6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11607, 0.677607, -20.2887)
+target = NodePath("../target2")
+
+[node name="Person7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_u8571")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86483, 0.677607, -18.3888)
+target = NodePath("../target3")
+
+[node name="target" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35081, 39.1837)
+
+[node name="target2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73044, 0.35081, 39.1837)
+
+[node name="target3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35374, 0.35081, 39.1837)
+
+[node name="target4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90717, 0.35081, 39.1837)
+
+[node name="StaticColliders" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StaticColliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72364, 10.6324)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticColliders/StaticBody3D"]
+shape = SubResource("BoxShape3D_b6oag")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="StaticColliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6673, 2.70423, 11.5556)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticColliders/StaticBody3D2"]
+shape = SubResource("BoxShape3D_af412")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="StaticColliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5306, 2.06364, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticColliders/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.0212)
+shape = SubResource("BoxShape3D_af412")

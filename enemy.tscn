@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://84401dlrcjtv"]
+[gd_scene load_steps=7 format=3 uid="uid://84401dlrcjtv"]
 
 [ext_resource type="Script" path="res://PersonController.gd" id="1_72124"]
 [ext_resource type="PackedScene" uid="uid://rh87ibrtip08" path="res://assets/quaternius-animated-men-pack/male_long_sleeve.tscn" id="2_h6r3g"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_stnkj"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jeblr"]
+friction = 0.0
+absorbent = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f0dqo"]
 
 [sub_resource type="Animation" id="Animation_duwwm"]
 resource_name = "death"
@@ -27,19 +31,22 @@ _data = {
 "death": SubResource("Animation_duwwm")
 }
 
-[node name="Enemy" type="RigidBody3D"]
+[node name="Person" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24904, 1.67387)
 collision_layer = 3
+axis_lock_angular_y = true
 mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_jeblr")
+gravity_scale = 10.0
 script = ExtResource("1_72124")
-SPEED = 0.05
+SPEED = 0.01
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0154, 0)
-shape = SubResource("CylinderShape3D_stnkj")
+shape = SubResource("CapsuleShape3D_f0dqo")
 
 [node name="skin" parent="." instance=ExtResource("2_h6r3g")]
-transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, 0)
+transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

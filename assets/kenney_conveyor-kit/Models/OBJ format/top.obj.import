@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnjl1ptgx6ayy"
+path="res://.godot/imported/top.obj-6791ad9f9797bab71aac4a77421889dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/top.obj-6791ad9f9797bab71aac4a77421889dc.mesh"]
+
+source_file="res://assets/kenney_conveyor-kit/Models/OBJ format/top.obj"
+dest_files=["res://.godot/imported/top.obj-6791ad9f9797bab71aac4a77421889dc.mesh", "res://.godot/imported/top.obj-6791ad9f9797bab71aac4a77421889dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

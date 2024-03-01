@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6uuow1iqecro"
+path="res://.godot/imported/door.obj-eed38c97b8300d97a4a3adaee5b14b5e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door.obj-eed38c97b8300d97a4a3adaee5b14b5e.mesh"]
+
+source_file="res://assets/kenney_conveyor-kit/Models/OBJ format/door.obj"
+dest_files=["res://.godot/imported/door.obj-eed38c97b8300d97a4a3adaee5b14b5e.mesh", "res://.godot/imported/door.obj-eed38c97b8300d97a4a3adaee5b14b5e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

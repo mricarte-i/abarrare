@@ -5,8 +5,10 @@ extends RigidBody3D
 
 @onready var skin = $skin
 @onready var anim = $AnimationPlayer
+@onready var coll = $CollisionShape3D
 
 var isDead = false
+@export var isAberrant = false
 
 var collision_force = Vector3.ZERO
 var prev_linear_velocity = Vector3.ZERO
@@ -30,10 +32,15 @@ func apply_punch(force: Vector3) -> void:
 	print("auch")
 	skin.apply_physics()
 	isDead = true
+	coll.disabled = true
 	anim.play("death")
 	
 func death():
 	print("death to me")
+	if isAberrant:
+		print("-1 EVIL")
+	else:
+		print("oops")
 	queue_free()
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
