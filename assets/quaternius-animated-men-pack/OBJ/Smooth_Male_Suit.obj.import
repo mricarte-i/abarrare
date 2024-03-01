@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpo5pbg5qhk07"
+path="res://.godot/imported/Smooth_Male_Suit.obj-4503fcb110af73ccd8511e39acade972.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Smooth_Male_Suit.obj-4503fcb110af73ccd8511e39acade972.mesh"]
+
+source_file="res://assets/quaternius-animated-men-pack/OBJ/Smooth_Male_Suit.obj"
+dest_files=["res://.godot/imported/Smooth_Male_Suit.obj-4503fcb110af73ccd8511e39acade972.mesh", "res://.godot/imported/Smooth_Male_Suit.obj-4503fcb110af73ccd8511e39acade972.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

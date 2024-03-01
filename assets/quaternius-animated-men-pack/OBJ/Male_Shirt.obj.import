@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tjuoh1x5ii38"
+path="res://.godot/imported/Male_Shirt.obj-9588b52b1b854f68624000f6b148aa14.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Male_Shirt.obj-9588b52b1b854f68624000f6b148aa14.mesh"]
+
+source_file="res://assets/quaternius-animated-men-pack/OBJ/Male_Shirt.obj"
+dest_files=["res://.godot/imported/Male_Shirt.obj-9588b52b1b854f68624000f6b148aa14.mesh", "res://.godot/imported/Male_Shirt.obj-9588b52b1b854f68624000f6b148aa14.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
